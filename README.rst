@@ -677,12 +677,12 @@ page rendering and painting.
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
 .. _`Ethernet`: http://en.wikipedia.org/wiki/IEEE_802.3
 .. _`WiFi`: https://en.wikipedia.org/wiki/IEEE_802.11
-.. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_data_communication_protocol
+.. _`Cellular data network`: https://en.wikipedia.org/wiki/Cellular_network
 .. _`analog-to-digital converter`: https://en.wikipedia.org/wiki/Analog-to-digital_converter
 .. _`network node`: https://en.wikipedia.org/wiki/Computer_network#Network_nodes
 .. _`varies by OS` : https://en.wikipedia.org/wiki/Hosts_%28file%29#Location_in_the_file_system
 .. _`简体中文`: https://github.com/skyline75489/what-happens-when-zh_CN
 .. _`한국어`: https://github.com/SantonyChoi/what-happens-when-KR
 .. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
-.. _`downgrade attack`: http://en.wikipedia.org/wiki/SSL_stripping
+.. _`downgrade attack`: https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
