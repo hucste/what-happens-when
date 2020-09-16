@@ -379,25 +379,25 @@ connexion TCP :
   et envoie le paquet au serveur avec le bit SYN paramétré pour indiquer
   qu'il active l'ISN. 
 * Le serveur reçoit le bit SYN et s'il est "d'humeur agréable" : 
-  * le serveur choisit son propre numéro de séquence initial
-  * le serveur paramètre le bit SYN afin d'indiquer qu'il a choisit son ISN
-  * le serveur copie l'ISN du client +1 dans son champ ACK et ajoute le 
+   * le serveur choisit son propre numéro de séquence initial
+   * le serveur paramètre le bit SYN afin d'indiquer qu'il a choisit son ISN
+   * le serveur copie l'ISN du client +1 dans son champ ACK et ajoute le 
   drapeau ACK afin d'indiquer qu'il accuse réception du premier paquet. 
 * Le client reconnaît la connexion en envoyant un paquet : 
-  * augmentant son propre numéro de séquence
-  * augmentant le numéro d'accusé de réception
-  * paramètre le champ ACK
+   * augmentant son propre numéro de séquence
+   * augmentant le numéro d'accusé de réception
+   * paramètre le champ ACK
 * La donnée est transmise ainsi : 
-  * Lorsqu'une partie envoie N octets de données, elle augmente sa séquence
-  SEQ par un numéro
-  * Quand l'autre partie accuse réception du paquet (ou d'une chaîne de 
-    paquets), elle envoie un paquet ACK avec une valeur ACK égale à la
-    dernière séquence reçue depuis l'autre partie. 
+   * Lorsqu'une partie envoie N octets de données, elle augmente sa séquence
+   SEQ par un numéro
+   * Quand l'autre partie accuse réception du paquet (ou d'une chaîne de 
+   paquets), elle envoie un paquet ACK avec une valeur ACK égale à la
+   dernière séquence reçue depuis l'autre partie. 
 * Pour fermer la connexion : 
-  * la partie qui termine la connexion envoie un paquet FIN.
-  * l'autre partie accuse réception ACK du paquet FIN et envoie son propre
+   * la partie qui termine la connexion envoie un paquet FIN.
+   * l'autre partie accuse réception ACK du paquet FIN et envoie son propre
   paquet FIN. 
-  * la première partie accuse réception ACK du paquet FIN de l'autre partie. 
+   * la première partie accuse réception ACK du paquet FIN de l'autre partie. 
 
 La Poignée de Main TLS
 ----------------------
