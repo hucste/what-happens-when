@@ -74,12 +74,12 @@ c'était des connexions de type PS/2 ou ADB.
 
 - Ces paquets sont envoyés par un signal électrique différentiel sur les
   connecteurs D+ et D- (entre 2) à la vitesse maximale de 1.5 Mo/s (Méga-octet
-  par seconde), puisqu'un dispositif HID (Human Interface Device) est 
+  par seconde), puisqu'un dispositif IHM (Interface Homme-Machine) est 
   toujours déclaré en tant que "dispositif à faible vitesse" 
   (en conformité avec la norme USB 2.0).
 
 - Ce signal en série est alors décodé par le contrôleur USB de l'ordinateur, 
-  puis interprété par le pilote du dispositif universel de clavier HID
+  puis interprété par le pilote du dispositif universel de clavier IHM
   de l'ordinateur. La valeur de la touche est passée au-travers de la 
   couche d'abstraction matérielle du système d'exploitation.
   
@@ -89,7 +89,7 @@ c'était des connexions de type PS/2 ou ADB.
   une quantité infime de courant est transmise au doigt. Cela complète 
   le circuit par le champ électrostatique de la couche conductrice et 
   crée une chute de tension à cet endroit de l'écran. Le ``contrôleur de l'écran``
-  une interruption rapportant les coordonnées de la touche pressée. 
+  lève une interruption rapportant les coordonnées de la touche pressée. 
 
 - Alors le système d'exploitation mobile notifie à l'application en cours 
   de l’événement de pression d'un des éléments de son interface (qui sont
@@ -106,17 +106,18 @@ Déclenchement d'interruption [Hors claviers USB]
 
 Le clavier envoie des signaux sur sa ligne de requêtes d'interruption (IRQ),
 qui correspond à un entier ``interrupt vector`` du contrôleur d'interruption.
-Le processeur (CPU) utilise la table de descripteur d'interruption (IDT : ``Interrupt Descriptor Table``)
-qui correspond aux vecteurs d'interruption vers les fonctions (``interrupt handlers``)
-qui sont fournis par le noyau. Lorsqu'une interruption arrive, le CPU indexe
-l'IDT avec le vecteur d'interruption et exécute le gestionnaire approprié. 
+Le processeur (UCT : ``Unité Centrale de Traitement``) utilise la table de 
+descripteurs d'interruptions (IDT : ``Interrupt Descriptor Table``)
+qui correspond aux vecteurs d'interruptions vers les fonctions (``interrupt handlers``)
+qui sont fournis par le noyau. Lorsqu'une interruption arrive, l'UCT indexe
+l'IDT avec le vecteur d'interruptions et exécute le gestionnaire approprié. 
 Ainsi, le noyau est introduit. 
 
 (Dans Windows) Un message ``WM_KEYDOWN`` est envoyé à l'application
 -------------------------------------------------------------------
 
-Le transport HID envoie l'événement de touche pressée au pilote ``KBDHID.sys`` 
-qui convertit l'utilisation du HID vers un code d'analyse. Dans ce cas, 
+Le transport IHM envoie l'événement de touche pressée au pilote ``KBDHID.sys`` 
+qui convertit l'utilisation de l'IHM vers un code d'analyse. Dans ce cas, 
 le code d'analyse est ``VK_RETURN`` (``0x0D``). Le pilote ``KBDHID.sys`` 
 s'interface avec ``KBDCLASS.sys`` (un pilote de classe clavier). Ce pilote
 est responsable de toutes les entrées de clavier et clavier numérique de 
@@ -164,7 +165,7 @@ le gérant, via un événement ``NSEvent`` d'un type d'événement
 
 Lorsqu'un serveur graphique ``X server`` est utilisé, ``X`` utilisera
 le pilote d'événement générique ``evdev`` afin d'acquérir l'événement de 
-pression de touche. la conversion des codes de touches en codes d'analyse
+pression de touche. La conversion des codes de touches en codes d'analyse
 est faite à l'aide de règles et de keymaps ("cartes de claviers") spécifiques
 à ``X server``. 
 Lorsque la correspondance du code d'analyse à une touche pressée est complète, 
@@ -180,16 +181,13 @@ Analyse d'URL
 * Le navigateur a maintenant l'information suivante contenue dans l'URL 
   (Uniform Resource Locator) :
 
-    - ``Protocol``  "http"
-        Utilise 'Hyper Text Transfer Protocol'
-
-    - ``Resource``  "/"
-        Récupère la page principale (index)        
+- ``Protocol`` "http" : Utilise 'Hyper Text Transfer Protocol'
+- ``Resource``  "/" : Récupère la page principale (index)        
 
 Est-ce une URL ou un terme recherché ?
 --------------------------------------
 
-Quand aucun protocole ou nom de domaine valide est donné, le navigateur 
+Quand aucun protocole ou nom de domaine valide n'est donné, le navigateur 
 s'occupe de récupérer le texte donné dans la boite d'adresse au moteur de
 recherche web par défaut du navigateur. 
 Dans beaucoup de cas, un texte spécial est ajouté à l'URL pour indiquer 
@@ -226,7 +224,7 @@ Recherche DNS
 
 * Le navigateur vérifie si le domaine est dans son cache. (Pour voir le 
   cache DNS dans Chrome, écrivez dans la barre d'adresse 
-  `chrome://net-internals/#dns <chrome://net-internals/#dns>`_).
+  ``chrome://net-internals/#dns``).
 * S'il n'est pas trouvé, le navigateur appelle la fonction de bibliothèque
   ``gethostbyname`` (qui varie selon l'OS) afin de faire la recherche.
 * ``gethostbyname`` vérifie si le nom d'hôte peut être résolu par référence
@@ -300,13 +298,15 @@ Commutateur :
 * Si le routeur est sur la même "interface", il répondra avec une "Réponse ARP``
   (lire ci-dessous)
 
-
 ``Réponse ARP``::
 
     Émetteur MAC: target:mac:address:here
     Émetteur IP: target.ip.goes.here
     Cible MAC: interface:mac:address:here
     Cible IP: interface.ip.goes.here
+    
+*Le protocole ARP est nécessaire au fonctionnement d’IPv4, utilisé par dessus
+un réseau de type Ethernet.*
 
 Maintenant que la bibliothèque réseau a l'adresse IP, soit de notre serveur
 DNS, soit de la passerelle par défaut, elle peut reprendre son processus DNS :
@@ -319,8 +319,8 @@ DNS, soit de la passerelle par défaut, elle peut reprendre son processus DNS :
   l'enregistrement SOA (Start Of Authority) soit atteint, et qu'une réponse
   soit retournée. 
 
-Ouverture d'un socket
----------------------
+Ouverture d'une socket
+----------------------
 
 Une fois que le navigateur reçoit l'adresse IP du serveur de destination, 
 il la prend ainsi que le numéro de port donné dans l'URL (par défaut, le
@@ -335,7 +335,7 @@ flux de socket TCP - ``AF_INET/AF_INET6`` et ``SOCK_STREAM``.
 * Ce segment est envoyé vers la Couche Réseau, qui enveloppe une entête IP
   additionnelle. L'adresse IP du serveur cible aussi bien que celle de 
   la machine courante est insérée pour former un paquet. 
-* Le paquet suivant arrive sur la Couche de Liaison. Un entête de trame 
+* Le paquet suivant arrive sur la Couche de Liaison. Une entête de trame 
   est ajouté qui inclut l'adresse MAC de l'interface réseau de la machine
   ainsi que l'adresse MAC de la passerelle (le routeur local). Tout comme
   avant, si le noyau ne connaît pas l'adresse MAC de la passerelle, il 
@@ -452,7 +452,7 @@ il envoie une requête au serveur de la forme::
 où ``[autres entêtes]`` référent à une série de paire de clé et valeur séparée
 par le symbole deux points ':', formatées selon la spécification HTTP et 
 séparées par d'uniques nouvelles lignes.
-(Cela suppose que le navigateur web utilisé n'est pas de bogues violant la
+(Cela suppose que le navigateur web utilisé n'ait pas de bogues violant la
 spécification HTTP. Cela suppose aussi que le navigateur web utilise ``HTTP/1.1``,
 autrement il ne pourrait pas inclure l'entête ``Host`` dans la requête ;
 la version spécifiée dans la requête ``GET`` serait soit ``HTTP/1.0`` ou ``HTTP/0.9``.)
