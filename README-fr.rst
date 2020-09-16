@@ -679,7 +679,7 @@ Rendu de Page
 * Des étapes plus compliquées sont menées lorsque les éléments sont positionnés
   en ``floated``, ``absolutely`` ou ``relatively``, ou lorsque d'autres 
   fonctionnalités plus complexes sont utilisées. Pour avoir plus de détails, voir 
-  http://dev.w3.org/csswg/css2/ and http://www.w3.org/Style/CSS/current-work
+  http://dev.w3.org/csswg/css2/ et http://www.w3.org/Style/CSS/current-work
 * Crée des calques pour décrire quelles parties de la page peuvent être 
   animées en tant que groupe sans être re-traitées. Chaque objet d'image 
   ou de rendu peut être assigné à un calque. 
