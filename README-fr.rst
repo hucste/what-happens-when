@@ -514,13 +514,13 @@ Linux et IIS pour Windows.
 
 * Le serveur HTTPD (Service HTTP) reçoit la requête. 
 * Le serveur décompose la requête selon les paramètres suivants : 
-	* la méthode de requête HTTP (soit ``GET``, ``HEAD``, ``POST``, ``PUT``,
-      ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, ou ``TRACE``). Dans 
-      le cas où l'URL est entrée directement dans la barre d'adresse, elle 
-      sera ``GET``.
-    * le domaine ; dans ce cas : google.com
-    * le chemin ou la page demandé ; dans ce cas : / (puisqu'il n'y a pas
-      de chemin ou de page spécifique demandé, / est le chemin par défaut).
+   * la méthode de requête HTTP (soit ``GET``, ``HEAD``, ``POST``, ``PUT``,
+     ``PATCH``, ``DELETE``, ``CONNECT``, ``OPTIONS``, ou ``TRACE``). Dans 
+     le cas où l'URL est entrée directement dans la barre d'adresse, elle 
+     sera ``GET``.
+   * le domaine ; dans ce cas : google.com
+   * le chemin ou la page demandé ; dans ce cas : / (puisqu'il n'y a pas
+     de chemin ou de page spécifique demandé, / est le chemin par défaut).
 * Le serveur vérifie qu'un Hôte Virtuel soit configuré sur le serveur correspondant
   à google.com. 
 * Le serveur vérifie que google.com peut accepter les requêtes GET. 
