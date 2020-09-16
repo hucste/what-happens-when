@@ -131,8 +131,8 @@ alors ``SendMessage(hWnd, WM_KEYDOWN, VK_RETURN, lParam)``. ``lParam`` est
 un masque binaire qui indique des informations complémentaires à la pression
 de touche : compteur de répétition (0 dans ce cas), le code d'analyse actuel
 (peut être dépendant du fabriquant, mais ne l'est pas généralement pour ``VK_RETURN``),
- quelque soit la touche étendue (e.g. alt, shift, ctrl) qui soit aussi 
- appuyée (elles ne l'étaient pas), ou dans un autre état. 
+quelque soit la touche étendue (e.g. alt, shift, ctrl) qui soit aussi 
+appuyée (elles ne l'étaient pas), ou dans un autre état. 
 
 L'API Windows ``SendMessage`` est une fonction simple qui ajoute le message
 à une queue d'un gestionnaire de fenêtres particulier (``hWnd``). Plus tard,
