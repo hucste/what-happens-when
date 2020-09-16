@@ -304,10 +304,14 @@ Commutateur :
     Émetteur IP: target.ip.goes.here
     Cible MAC: interface:mac:address:here
     Cible IP: interface.ip.goes.here
-    
-*Le protocole ARP est nécessaire au fonctionnement d’`IPv4`_, utilisé par dessus
+
+----
+
+Le protocole ARP est nécessaire au fonctionnement d’`IPv4`_, utilisé par dessus
 un réseau de type `Ethernet`_. En `IPv6`_, les fonctions ARP ont été reprises dans
-le processus de découverte `NDP`_.*
+le processus de découverte `NDP`_.
+
+----
 
 Maintenant que la bibliothèque réseau a l'adresse IP, soit de notre serveur
 DNS, soit de la passerelle par défaut, elle peut reprendre son processus DNS :
