@@ -6,7 +6,7 @@ Ce dépôt est une tentative pour répondre à cette vieille question d'intervie
 de votre navigateur web et que vous appuyez sur la touche Entrée ?"
 
 Hormis l'habituel histoire, nous allons essayer de répondre à cette question
-avec autant de détails que possible. Rien ne sera négliger. 
+avec autant de détails que possible. Rien ne sera négligé. 
 
 Ceci est un processus collaboratif, alors svp creusez et essayez d'aider !
 Il y a des tonnes de détails manquants qui n'attendent que vous pour les 
