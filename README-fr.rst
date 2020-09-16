@@ -305,8 +305,9 @@ Commutateur :
     Cible MAC: interface:mac:address:here
     Cible IP: interface.ip.goes.here
     
-*Le protocole ARP est nécessaire au fonctionnement d’IPv4, utilisé par dessus
-un réseau de type Ethernet.*
+*Le protocole ARP est nécessaire au fonctionnement d’`IPv4`_, utilisé par dessus
+un réseau de type `Ethernet`_. En `IPv6`_, les fonctions ARP ont été reprises dans
+le processus de découverte `NDP`_.*
 
 Maintenant que la bibliothèque réseau a l'adresse IP, soit de notre serveur
 DNS, soit de la passerelle par défaut, elle peut reprendre son processus DNS :
@@ -741,7 +742,9 @@ entraînant un nouveau cycle de rendu et de dessin de la page.
 .. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
 .. _`downgrade attack`: https://fr.wikipedia.org/wiki/Moxie_Marlinspike#HTTPS_stripping
 .. _`modèle OSI`: https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI
-
+.. _`IPv4`: https://fr.wikipedia.org/wiki/Internet_Protocol
+.. _`IPv6`: https://fr.wikipedia.org/wiki/IPv6
+.. _`NDP`: https://fr.wikipedia.org/wiki/Neighbor_Discovery_Protocol
 
 
 
