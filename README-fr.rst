@@ -502,7 +502,7 @@ au lieu de ``GET / HTTP/1.1``.
 Si le HTML référence une ressource sur un domaine différent que ``www.google.com``, 
 le navigateur web reprendra les étapes invoquées pour résoudre l'autre domaine, 
 et suivra toutes les mêmes étapes jusqu'à ce point pour ce domaine. 
-L'entête `Host`` dans la requête sera paramétrée vers le nom du serveur 
+L'entête ``Host`` dans la requête sera paramétrée vers le nom du serveur 
 approprié plutôt que ``google.com``.
 
 Gestionnaire de Requêtes HTTP du Serveur
