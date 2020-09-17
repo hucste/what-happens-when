@@ -180,8 +180,8 @@ Analyse d'URL
 
 * Le navigateur a maintenant l'information suivante contenue dans l'URL 
   (Uniform Resource Locator) :
-   - ``Protocol`` "http" : Utilise 'Hyper Text Transfer Protocol'
-   - ``Resource``  "/" : Récupère la page principale (index)        
+   * ``Protocol`` "http" : Utilise 'Hyper Text Transfer Protocol'
+   * ``Resource``  "/" : Récupère la page principale (index)        
 
 Est-ce une URL ou un terme recherché ?
 --------------------------------------
