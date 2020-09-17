@@ -14,9 +14,9 @@ request, please!
 
 This is all licensed under the terms of the `Creative Commons Zero`_ license.
 
-Read this in `简体中文`_ (simplified Chinese), `日本語`_ (Japanese) and `한국어`_
-(Korean). NOTE: these have not been reviewed by the alex/what-happens-when
-maintainers.
+Read this in "`Que se passe-t-il…`_" (French) `简体中文`_ (simplified Chinese), 
+`日本語`_ (Japanese) and `한국어`_  (Korean). 
+NOTE: these have not been reviewed by the alex/what-happens-when maintainers.
 
 Table of Contents
 ====================
@@ -686,3 +686,6 @@ page rendering and painting.
 .. _`日本語`: https://github.com/tettttsuo/what-happens-when-JA
 .. _`downgrade attack`: https://en.wikipedia.org/wiki/Moxie_Marlinspike#SSL_stripping
 .. _`OSI Model`: https://en.wikipedia.org/wiki/OSI_model
+.. _`Que se passe-t-il…`: README-fr.rst
+
+
